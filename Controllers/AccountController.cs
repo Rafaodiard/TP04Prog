@@ -19,7 +19,6 @@ public class AccountController : Controller
         {
             return RedirectToAction("Index", "Album", new { idUsuario = u.ID });
         }
-
         ViewBag.Error = "Usuario o contraseña incorrectos";
         return View("LogIn");
     }
