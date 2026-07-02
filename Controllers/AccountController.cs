@@ -11,17 +11,16 @@ public class AccountController : Controller
         return View("LogIn");
     }
     [HttpPost]
-    public IActionResult Login(string Usuario, string password)
+    public IActionResult Login(LoginViewModel l)
     {
-        if (DB.Login(usuario, password))
-        {
-            return RedirectToAction("Index", "Album");
-        }
-        else
-        {
-            return View("LogIn");
+        Usuarios u = DB.Login(l);
 
+        if(u != null)
+        {
+            return RedirectToAction("Index", "Album", new { idUsuario = u.ID });
         }
+
+        ViewBag.Error = "Usuario o contraseña incorrectos";
+        return View("LogIn");
     }
-
 }

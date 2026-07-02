@@ -4,7 +4,7 @@
 
 <h1>Iniciar sesión</h1>
 
-<form method="post" action='@Url.Action("Login","Login")'>
+<form method="post" action='@Url.Action("Login","Account")'>
 
     <label>Usuario</label><br />
     <input type="text" name="usuario" />
@@ -22,4 +22,4 @@
 
 <br />
 
-<p>No tienes una cuenta? <a href="">Registrarse</a></p>
+<p>¿No tienes una cuenta? <a href="action='@Url.Action("Register","Account")'">Registrarse</a></p>
