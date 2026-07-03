@@ -26,5 +26,11 @@ public class AccountController : Controller
         ViewBag.Error = "Usuario o contraseña incorrectos";
         return View("LogIn");
     }
+    [HttpPost]
+    public IActionResult Register(Usuarios u)
+    {
+        
+        return View();
+    }
     
 }

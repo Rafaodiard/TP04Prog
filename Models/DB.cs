@@ -8,7 +8,7 @@ using TP04Prog.Models;
     { 
         private static string _connectionString =
 @"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
-        public static Usuarios Login(LogInViewModel l)
+        public static Usuarios? Login(LogInViewModel l)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -17,7 +17,7 @@ using TP04Prog.Models;
                                 WHERE Usuario = @usuario
                                 AND Password = @password";
 
-                return connection.QueryFirstOrDefault<Usuarios>(
+                return connection.QueryFirstOrDefault<Usuarios?>(
                     query,
                     new
                     {
@@ -26,6 +26,25 @@ using TP04Prog.Models;
                     });
             }
         }
+        public static void Register(Usuarios u)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO Usuarios (Usuario, Password, Nombre)
+                                VALUES (@usuario, @password, @nombre)";
+
+                connection.Execute(query,
+                    new
+                    {
+                        usuario = u.Usuario,
+                        password = u.Password,
+                        nombre = u.Nombre
+                    });
+            }
+        } 
+
+
+
     }
     
 
