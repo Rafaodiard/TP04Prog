@@ -1,6 +1,6 @@
-namespace TP04PROG.Models
+namespace TP04Prog.Models
 {
-    public class LoginViewModel
+    public class LogInViewModel
     {
         public string usuario { get; set; }
 

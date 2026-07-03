@@ -3,9 +3,12 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using TP04Prog.Models;
 
+
     public static class DB 
     { 
-        public static Usuarios Login(LoginViewModel l)
+        private static string _connectionString =
+@"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+        public static Usuarios Login(LogInViewModel l)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
             {
