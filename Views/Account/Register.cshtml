@@ -5,16 +5,16 @@
 
 <form method="post" action='@Url.Action("Register","Account")' id="formRegister">
     <label>nombre</label><br />
-    <input type="text" name="nombre" />
+    <input type="text" name="nombre" required />
     <label>Usuario</label><br />
-    <input type="text" name="usuario" />
+    <input type="text" name="usuario" required />
 
     <br /><br />
 
     <label>Contraseña</label><br />
-    <input type="password" name="password" id = "contra1"/>
+    <input type="password" name="password" id = "contra1" required />
     <label>Repetir contraseña</label><br />
-    <input type="password" name="password2" id="contra2"/>
+    <input type="password" name="password2" id="contra2" required />
 
     <br /><br />
 
@@ -26,7 +26,7 @@
 
 <br />
 
-<p>¿ya tienes una cuenta?  <a href="action='@Url.Action("index","Account")'">iniciar sesion</a></p>
+<p>¿ya tienes una cuenta?  <a href="@Url.Action("index", "Account")">iniciar sesion</a></p>
 
 
 @section Scripts {

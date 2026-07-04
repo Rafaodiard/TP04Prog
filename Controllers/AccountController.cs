@@ -29,8 +29,8 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Register(Usuarios u)
     {
-        
-        return View();
+        DB.Register(u);
+        return View("LogIn");
     }
     
 }

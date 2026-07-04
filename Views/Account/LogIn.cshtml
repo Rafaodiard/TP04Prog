@@ -7,16 +7,17 @@
 <form method="post" action='@Url.Action("Login","Account")'>
 
     <label>Usuario</label><br />
-    <input type="text" name="usuario" />
+    <input type="text" name="usuario" required />
 
     <br /><br />
 
     <label>Contraseña</label><br />
-    <input type="password" name="password" />
+    <input type="password" name="password" required />
 v
     <br /><br />
 
     <button type="submit">Ingresar</button>
+    <p>@ViewBag.Error</p>
 
 </form>
 
