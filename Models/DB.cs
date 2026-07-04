@@ -6,8 +6,8 @@ using TP04Prog.Models;
 
     public static class DB 
     { 
-        private static string _connectionString =
-@"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+private static string _connectionString =
+@"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
         public static Usuarios? Login(LogInViewModel l)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -43,6 +43,43 @@ using TP04Prog.Models;
             }
         } 
 
+        public static Usuarios? GetUsuarioById(int id)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * 
+                                FROM Usuarios
+                                WHERE ID = @id";
+
+                return connection.QueryFirstOrDefault<Usuarios?>(
+                    query,
+                    new
+                    {
+                        id = id
+                    });
+            }
+        }
+        public static void UpdateUsuario(Usuarios u)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE Usuarios
+                                SET Usuario = @usuario,
+                                    Password = @password,
+                                    Nombre = @nombre
+                                WHERE ID = @id";
+
+                connection.Execute(query,
+                    new
+                    {
+                        id = u.ID,
+                        usuario = u.Usuario,
+                        password = u.Password,
+                        nombre = u.Nombre
+                    });
+            }
+        }
+       
 
 
     }

@@ -17,7 +17,19 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Login()
+    {
+        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
 
+        if (usuarioId == null)
+        {
+            return RedirectToAction("Index", "Account");
+        }
+        else
+        {
+            return RedirectToAction("Profile", "Account");
+        }
+    }
     public IActionResult Privacy()
     {
         return View();
