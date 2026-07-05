@@ -79,6 +79,76 @@ private static string _connectionString =
                     });
             }
         }
+
+        public static List<Selecciones> GetSelecciones(int idUsuario)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * 
+                                FROM Selecciones";
+                
+                List<Selecciones> selecciones = connection.Query<Selecciones>(query).ToList();
+                foreach (Selecciones s in selecciones)
+                {
+                    s.Figuritas = GetFiguritasBySeleccion(s.ID, idUsuario);                
+                }
+                return selecciones;
+            }
+        }
+        public static List<Figuritas> GetFiguritasBySeleccion(int seleccionId, int idUsuario)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                                SELECT
+                                    F.*,
+                                    J.*,
+                                    UF.Pegada,
+                                    UF.Cantidad
+                                FROM Figuritas F
+                                INNER JOIN Jugadores J
+                                    ON F.idJugador = J.ID
+                                LEFT JOIN UsuariosFiguritas UF
+                                    ON UF.idFigurita = F.ID
+                                AND UF.idUsuario = @idUsuario
+                                WHERE J.IdSeleccion = @seleccionId";
+
+
+                List<Figuritas> figuritas = connection.Query<Figuritas>(query, new { seleccionId, idUsuario }).ToList();
+
+                foreach (Figuritas f in figuritas)
+                {
+                    f.Jugador = GetJugador(f.idJugador);
+                }
+
+                return figuritas;
+            }
+        }
+        public static Jugadores GetJugador(int jugadorId)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * 
+                                FROM Jugadores
+                                WHERE ID = @jugadorId";
+
+                return connection.QueryFirstOrDefault<Jugadores>(query, new { jugadorId });
+            }
+        }
+public static void PegarFigurita(int idUsuario, int idFigurita)
+{
+    using(SqlConnection connection = new SqlConnection(_connectionString))
+    {
+        string query = @"UPDATE UsuariosFiguritas
+                         SET Pegada = 1
+                         WHERE idFigurita = @idFigurita
+                         AND idUsuario = @idUsuario";
+
+        int filas = connection.Execute(query, new { idFigurita, idUsuario });
+
+        Console.WriteLine($"Filas actualizadas: {filas}");
+    }
+}
        
 
 

@@ -1,0 +1,47 @@
+@{
+    List<Selecciones> selecciones = ViewBag.Selecciones;
+}
+
+<h1>Album FIFA 2026</h1>
+
+<section>
+    <div class="album">
+
+        <button id="anterior">◀</button>
+
+        @for (int i = 0; i < selecciones.Count; i++)
+        {
+            <div class="seleccion @(i == 0 ? "activa" : "")">
+
+                <h2>@selecciones[i].Nombre</h2>
+
+                @foreach (Figuritas figurita in selecciones[i].Figuritas)
+                {
+                    <div class="figurita">
+                        @if(figurita.Pegada)
+                        {
+                            <img src="~/images/jugadores/@figurita.Jugador.Imagen" />
+                        }
+                        else
+                        {
+                            <img src="~/images/jugadores/def.svg"/>
+                            @if(figurita.Cantidad > 0)
+                            {
+                                <button data-imagen="@figurita.Jugador.Imagen" onclick="Pegar(@figurita.ID, this)">Pegar</button>
+                            }
+                        }
+                        <p>@figurita.Jugador.Nombre</p>
+                    </div>
+                }
+
+            </div>
+        }
+
+        <button id="siguiente">▶</button>
+
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/Album.js"></script>
+}
