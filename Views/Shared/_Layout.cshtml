@@ -1,32 +1,71 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TP04Prog</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/TP04Prog.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav >
-            
+<header class="header">
+
+        <div>
+            <a href="@Url.Action("Index","Album")">
+                <img src="~/Images/logo-mundial-2026-logotipo-para-mundial-branding-05.webp" alt="Logo del álbum">
+            </a>
+            <div>
+                <H1>Álbum Digital</H1>
+                <div>
+                    <p>Mundial </p>
+                    <p class="verde">2026</p>
+                </div>
+
+            </div>
+        </div>
+
+        <nav>
+            <div>
+            <a href="@Url.Action("Index","Album")">
+                Mi álbum
+            </a>
+
+            <a href="@Url.Action("AbrirSobre","Album")">
+                Abrir sobre
+            </a>
+            </div>
+            <div class="usuario">
+                <p>@ViewBag.Figuritas/@ViewBag.TotalFiguritas</p> <br>
+                <p>FIGURITAS</p>
+
+                <a href="@Url.Action("Index","Account")">
+                    <img src="~/Images/Usuario.png" alt="Imagen del usuario">
+                </a>
+            </div>
+
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer>
 
-    </footer>
+</header>
+
+<div class="contenido">
+
+    @RenderBody()
+
+</div>
+
+<footer>
+
+    TP Programación 2026 - Álbum Virtual Mundial FIFA 2026
+
+</footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

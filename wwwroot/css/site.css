@@ -1,31 +1,96 @@
-html {
-  font-size: 14px;
-}
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: "Inter", sans-serif;
+}
+header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-top: 1%;
+}
+header h1
+{
+    font-size: 18px;
+    width: 100%;
+}
+.verde
+{
+    color: #00c000;
+}
+header p
+{
+    font-size: 25px;
+}
+header div div div
+{
+    display: flex;
+}
+header div div
+{
+    margin-top: 3%;
+    display: block;
+}
+header div
+{
+    margin-left: 2%;
+    display: flex;
+    gap: 10px;
+}
+header a img {
+    width: 105px !important;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+nav {
+  
+    width: 60%;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav div
+{
+    gap: 200px;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+nav a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #000000;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #232526;
+    color: #00c000;
+}
+.usuario
+{
+    gap: 20px;
+    justify-content: flex-end;
+}
+.usuario p
+{
+    color:#00c000;
+    font-size: 15px;
+}
+nav a img {
+    width: 75px !important;
+}
+body
+{
+  min-height: 100vh;
+  display: grid;
+    grid-template-rows: auto 1fr auto;
+
 }

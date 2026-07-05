@@ -43,7 +43,7 @@ private static string _connectionString =
             }
         } 
 
-        public static Usuarios? GetUsuarioById(int id)
+        public static Usuarios? GetUsuarioById(int pid)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -55,7 +55,7 @@ private static string _connectionString =
                     query,
                     new
                     {
-                        id = id
+                        id = pid
                     });
             }
         }
