@@ -236,7 +236,6 @@ C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\scopedcss\bundle\TP04Prog.styles.css
-C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\rkh9o7agiq-d37cze30h9.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\b46qv3wneb-61n19gt1b8.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\865rwv3j4i-f0noe0pzt9.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\zvlu55z0ef-xthblr6lgs.gz
@@ -270,7 +269,6 @@ C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\5znrxk0ta2-4edj96
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\wyyc0qufuf-aadqzmnxhn.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\k9b8y4mvtw-m3x4wnyq1k.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\wc1diyrhmk-jjfk9oxj3g.gz
-C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-0xui789qyg.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\0z9ki0lgmd-xtxxf3hu2r.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\snkyn2wjhp-t1cqhe9u97.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\eoq7tkz1gt-c2jlpeoesf.gz
@@ -341,4 +339,5 @@ C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\refint\TP04Prog.dll
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\TP04Prog.pdb
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\TP04Prog.genruntimeconfig.cache
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\ref\TP04Prog.dll
-C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-2w7h324mip.gz
+C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-7kcpm257mu.gz
+C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-qk02xfgh2y.gz
