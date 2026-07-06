@@ -1,0 +1,126 @@
+
+/*layout:*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+        min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+header, footer {
+    background-color: #000000;
+    color: white;
+    display: flex;
+
+}
+header {
+    background-color: #000000;
+    justify-content: space-between;
+    color: white;
+    padding-top: 1%;
+}
+header h1
+{
+    font-size: 18px;
+    width: 100%;
+}
+.verde
+{
+    color: #00c000;
+}
+header p
+{
+    font-size: 25px;
+}
+header div div div
+{
+    display: flex;
+}
+header div div
+{
+    margin-top: 3%;
+    display: block;
+}
+header div
+{
+    margin-left: 2%;
+    display: flex;
+    gap: 10px;
+}
+header a img {
+    width: 105px;
+}
+nav {
+  
+    width: 60%;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav div
+{
+    gap: 200px;
+}
+
+nav a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #000000;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #232526;
+    color: #00c000;
+}
+.usuario
+{
+    gap: 20px;
+    justify-content: flex-end;
+}
+.usuario p
+{
+    color:#00c000;
+    font-size: 15px;
+}
+nav a img {
+    width: 75px;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/*main:*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

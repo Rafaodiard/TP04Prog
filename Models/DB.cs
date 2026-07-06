@@ -6,8 +6,12 @@ using TP04Prog.Models;
 
     public static class DB 
     { 
-private static string _connectionString =
-@"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+        private static string _connectionString =
+        @"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
+        //@"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+
+
+        
         public static Usuarios? Login(LogInViewModel l)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
