@@ -135,24 +135,62 @@ using TP04Prog.Models;
                 string query = @"SELECT * 
                                 FROM Jugadores
                                 WHERE ID = @jugadorId";
-
+                
                 return connection.QueryFirstOrDefault<Jugadores>(query, new { jugadorId });
             }
         }
-public static void PegarFigurita(int idUsuario, int idFigurita)
-{
-    using(SqlConnection connection = new SqlConnection(_connectionString))
-    {
-        string query = @"UPDATE UsuariosFiguritas
-                         SET Pegada = 1
-                         WHERE idFigurita = @idFigurita
-                         AND idUsuario = @idUsuario";
+        public static Selecciones GetSeleccion(int seleccionId)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * 
+                                FROM Selecciones
+                                WHERE ID = @seleccionId";
+                
+                return connection.QueryFirstOrDefault<Selecciones>(query, new { seleccionId });
+            }
+        }
+        public static void PegarFigurita(int idUsuario, int idFigurita)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE UsuariosFiguritas
+                                SET Pegada = 1
+                                WHERE idFigurita = @idFigurita
+                                AND idUsuario = @idUsuario";
 
-        int filas = connection.Execute(query, new { idFigurita, idUsuario });
+                int filas = connection.Execute(query, new { idFigurita, idUsuario });
 
-        Console.WriteLine($"Filas actualizadas: {filas}");
-    }
-}
+                Console.WriteLine($"Filas actualizadas: {filas}");
+            }
+        }
+        public static List<Figuritas> getFiguritasByUsuario(int idUsuario)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT 
+                                    UF.Pegada,
+                                    UF.Cantidad,
+                                    F.*
+                                FROM UsuariosFiguritas UF 
+                                INNER JOIN Figuritas F
+                                    ON UF.idFigurita = F.ID 
+                                INNER JOIN Jugadores J 
+                                    ON F.IdJugador = J.ID
+                                WHERE UF.idUsuario = @idUsuario
+                                ORDER BY J.IdSeleccion, F.Numero";
+                
+                List<Figuritas> figuritas = connection.Query<Figuritas>(query, new{idUsuario}).ToList();
+                
+                foreach ( Figuritas item in figuritas)
+                {
+                    item.Jugador = GetJugador(item.idJugador);
+                    item.Jugador.Seleccion = GetSeleccion(item.Jugador.idSeleccion);
+                }
+                return figuritas;
+            }
+        }
+
        
 
 

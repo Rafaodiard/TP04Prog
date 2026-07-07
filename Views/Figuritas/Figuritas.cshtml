@@ -1,0 +1,32 @@
+@{
+    List<Figuritas> figuritas = ViewBag.Figuritas;
+    int seleccionActual = -1;
+    ViewData["Title"] = "Mis Figuritas";
+
+}
+<h1>Mis Figuritas:</h1>
+
+@foreach(Figuritas f in figuritas)
+{
+    if(f.Jugador.idSeleccion != seleccionActual)
+    {
+        seleccionActual = f.Jugador.idSeleccion;
+        <h2>@f.Jugador.Seleccion.Nombre</h2>
+    }
+    <div>
+        <img src="~/images/jugadores/@f.Jugador.Imagen" />
+        <p>@f.Jugador.Nombre</p>
+        <p>Cantidad: @f.Cantidad</p>
+
+        @if (f.Pegada)
+        {
+            <span>Pegada</span>
+        }
+        else
+        {
+            <span>Sin pegar</span>
+        }
+    </div>
+     
+}
+

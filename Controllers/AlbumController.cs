@@ -17,7 +17,6 @@ public class AlbumController : Controller
         ViewBag.Selecciones = DB.GetSelecciones(id);
         return View();
     }
-    [HttpPost]
 [HttpPost]
 public IActionResult Pegar([FromBody] PegarViewModel datos)
 {

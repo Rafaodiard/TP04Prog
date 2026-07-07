@@ -7,5 +7,7 @@ namespace TP04Prog.Models
         public int Ncamiseta { get; set; }
         public int idSeleccion { get; set; }
         public string Imagen { get; set; }
+
+        public Selecciones Seleccion {get; set;}
     }
 }
