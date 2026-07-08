@@ -188,8 +188,36 @@ using TP04Prog.Models;
                     item.Jugador.Seleccion = GetSeleccion(item.Jugador.idSeleccion);
                 }
                 return figuritas;
+            }  
+        }
+        public static List<Figuritas> getFiguritas()
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * FROM Figuritas"
+                return connection.Query<Figuritas>(query).ToList();
+
             }
         }
+            public static List<Figuritas> getFiguritasx5()
+            {
+                Random random = new Random();
+                List<Figuritas> figus = new List<Figuritas>();
+
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    string query = @"SELECT * FROM Figuritas  WHERE ID = @id";
+                    int cantidad = getFiguritas().Count ;
+                    for(int i = 0; i<5; i++)
+                    {
+                        figus.Add(connection.QueryFirstOrDefault<Figuritas>(query,new {id = random.Next(1, cantidad + 1)}));
+                    }
+                    return figus;
+
+
+
+                }
+            }
 
        
 

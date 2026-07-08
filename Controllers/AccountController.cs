@@ -85,7 +85,6 @@ public class AccountController : Controller
             return View();
         }
 
-        // Actualizar la contraseña en la base de datos
         usuario.Password = newPassword;
         DB.UpdateUsuario(usuario);
 

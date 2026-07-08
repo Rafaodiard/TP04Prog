@@ -21,6 +21,7 @@ public class FiguritasController : Controller
     }
     public IActionResult AbrirSobre()
     {
+        
         return  View();
     }
 }

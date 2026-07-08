@@ -30,6 +30,19 @@ public class HomeController : Controller
             return RedirectToAction("Profile", "Account");
         }
     }
+    public IActionResult Register()
+    {
+        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+
+        if (usuarioId == null)
+        {
+            return RedirectToAction("Register", "Account");
+        }
+        else
+        {
+            return RedirectToAction("Profile", "Account");
+        }
+    }
     public IActionResult Privacy()
     {
         return View();
