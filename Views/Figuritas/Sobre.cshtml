@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Abrir Sobre";
+}
+
+<div id="sobre">
+
+    <img src="/images/paquete.png" id="imagenSobre">
+
+    <button onclick="AbrirSobre()">
+        Abrir sobre
+    </button>
+
+</div>
+
+<div id="figuritas">
+</div>
+<button id="guardar" onclick="GuardarFigus()"> guardar figuritas </button>
+
+
+@section Scripts {
+    <script src="/js/sobre.js"></script>    
+    @if(ViewBag.hayFiguritas)
+{
+    <script>
+        cargarSobre();
+    </script>
+}
+} 

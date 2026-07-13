@@ -32,7 +32,7 @@
                 Mi álbum
             </a>
 
-            <a href="@Url.Action("AbrirSobre","Figuritas")">
+            <a href="@Url.Action("Sobre","Figuritas")">
                 Abrir sobre
             </a>
             <a href="@Url.Action("MisFiguritas", "Figuritas")">
@@ -40,8 +40,8 @@
             </a>
             </div>
             <div class="usuario">
-                <p>/@ViewBag.TotalFiguritas</p> <br>
-                <p>FIGURITAS</p>
+                <p>@ViewBag.Cantidad/30</p> <br>
+                <p>FIGURITAS PEGADAS </p>
 
                 <a href="@Url.Action("Profile","Account")">
                     <img src="~/Images/Usuario.png" alt="Imagen del usuario">

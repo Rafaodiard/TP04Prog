@@ -7,8 +7,8 @@ using TP04Prog.Models;
     public static class DB 
     { 
         private static string _connectionString =
-        @"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
-        //@"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+        //@"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
+        @"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
 
 
         
@@ -128,6 +128,15 @@ using TP04Prog.Models;
                 return figuritas;
             }
         }
+        public static Figuritas GetFiguritaById(int id)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * FROM Figuritas WHERE ID = @id";
+
+                return connection.QueryFirstOrDefault<Figuritas>(query, new { id });
+            }
+        }
         public static Jugadores GetJugador(int jugadorId)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -194,7 +203,7 @@ using TP04Prog.Models;
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = @"SELECT * FROM Figuritas"
+                string query = @"SELECT * FROM Figuritas";
                 return connection.Query<Figuritas>(query).ToList();
 
             }
@@ -212,16 +221,76 @@ using TP04Prog.Models;
                     {
                         figus.Add(connection.QueryFirstOrDefault<Figuritas>(query,new {id = random.Next(1, cantidad + 1)}));
                     }
+                    foreach (Figuritas f in figus)
+                    {
+                        f.Jugador = GetJugador(f.idJugador);
+                    }
                     return figus;
 
 
 
                 }
             }
+        public static void AgregarFigurita(int idUsuario, int idFigurita)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string queryExiste = @"
+                    SELECT COUNT(*)
+                    FROM UsuariosFiguritas
+                    WHERE idUsuario = @idUsuario
+                    AND idFigurita = @idFigurita";
 
-       
+                int existe = connection.ExecuteScalar<int>(queryExiste, new
+                {
+                    idUsuario,
+                    idFigurita
+                });
 
+                if(existe > 0)
+                {
+                    string queryUpdate = @"
+                        UPDATE UsuariosFiguritas
+                        SET Cantidad = Cantidad + 1
+                        WHERE idUsuario = @idUsuario
+                        AND idFigurita = @idFigurita";
 
+                    connection.Execute(queryUpdate, new
+                    {
+                        idUsuario,
+                        idFigurita
+                    });
+                }
+                else
+                {
+                    string queryInsert = @"
+                        INSERT INTO UsuariosFiguritas
+                        (idUsuario, idFigurita, Cantidad, Pegada)
+                        VALUES
+                        (@idUsuario, @idFigurita, 1, 0)";
+
+                    connection.Execute(queryInsert, new
+                    {
+                        idUsuario,
+                        idFigurita
+                    });
+                }
+            }
+        }
+
+        public static int GetCantidadPegadas(int idUsuario)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                    SELECT COUNT(*)
+                    FROM UsuariosFiguritas
+                    WHERE idUsuario = @idUsuario
+                    AND Pegada = 1";
+
+                return connection.ExecuteScalar<int>(query, new { idUsuario });
+            }
+        }
     }
     
 

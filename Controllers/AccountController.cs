@@ -16,7 +16,12 @@ public class AccountController : Controller
     }
     public IActionResult Profile()
     {
-        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
         
         if (usuarioId == null)
         {
@@ -28,12 +33,22 @@ public class AccountController : Controller
     }
     public IActionResult ChangePassword()
     {
-        return View();
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}        return View();
     }
     
     public IActionResult Logout()
     {
-        HttpContext.Session.Clear();
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}        HttpContext.Session.Clear();
         return RedirectToAction("Index", "Home");
     }
 
@@ -41,7 +56,12 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Login(LogInViewModel l)
     {
-        Usuarios u = DB.Login(l);
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}        Usuarios u = DB.Login(l);
 
         if(u != null)
         {
@@ -55,8 +75,21 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Register(Usuarios u)
     {
-        DB.Register(u);
-        HttpContext.Session.SetInt32("UsuarioId", u.ID);
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}        DB.Register(u);
+
+        LogInViewModel login = new LogInViewModel();
+        login.usuario = u.Usuario;
+        login.password = u.Password;
+
+        Usuarios usuario = DB.Login(login);
+
+        HttpContext.Session.SetInt32("UsuarioId", usuario.ID);
+
         return RedirectToAction("Index", "Album");
 
     }
@@ -65,7 +98,12 @@ public class AccountController : Controller
 
     public IActionResult ChangePassword(string currentPassword, string newPassword, string confirmPassword)
     {
-        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
         Usuarios usuario = DB.GetUsuarioById(usuarioId.Value);
 
         if (usuario == null)

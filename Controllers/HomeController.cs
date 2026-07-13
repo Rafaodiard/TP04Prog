@@ -11,16 +11,28 @@ public class HomeController : Controller
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
+
     }
 
     public IActionResult Index()
     {
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}
         return View();
     }
     public IActionResult Login()
     {
         int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}
         if (usuarioId == null)
         {
             return RedirectToAction("Index", "Account");
@@ -33,7 +45,12 @@ public class HomeController : Controller
     public IActionResult Register()
     {
         int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
+if (IdUsuario != null)
+{
+    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+}
         if (usuarioId == null)
         {
             return RedirectToAction("Register", "Account");

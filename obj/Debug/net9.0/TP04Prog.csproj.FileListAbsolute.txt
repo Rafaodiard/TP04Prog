@@ -136,8 +136,6 @@ C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\refint\TP04Prog.dll
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\TP04Prog.pdb
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\TP04Prog.genruntimeconfig.cache
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\ref\TP04Prog.dll
-C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-5ipweew5fc.gz
-C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\rkh9o7agiq-d37cze30h9.gz
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\865rwv3j4i-f0noe0pzt9.gz
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\zvlu55z0ef-xthblr6lgs.gz
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\yud9pi7wga-garoic9is1.gz
@@ -169,7 +167,6 @@ C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\5znrxk0ta2-4edj96wes
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\wyyc0qufuf-aadqzmnxhn.gz
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\k9b8y4mvtw-m3x4wnyq1k.gz
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\kqqlqx5q73-2prjjw0vsd.gz
-C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-0xui789qyg.gz
 C:\Users\49758734\Desktop\TP04Prog\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\49758734\Desktop\TP04Prog\bin\Debug\net9.0\appsettings.json
 C:\Users\49758734\Desktop\TP04Prog\bin\Debug\net9.0\TP04Prog.staticwebassets.runtime.json
@@ -512,3 +509,6 @@ C:\Users\49758734\TP04Prog\obj\Debug\net9.0\refint\TP04Prog.dll
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\TP04Prog.pdb
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\TP04Prog.genruntimeconfig.cache
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\ref\TP04Prog.dll
+C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-7kcpm257mu.gz
+C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-ovunuvsmdu.gz
+C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\2juh9ygk0w-qmjq89d65s.gz
