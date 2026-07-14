@@ -8,11 +8,12 @@
 }
 .figspeg
 {
-    margin-top: 5%;
+    margin-top: 7%;
     width: 5%;
     display: flex;
     justify-content: center;
     gap: 10px;
+    
 }
 .cant{
     margin-top: 45%;
@@ -72,12 +73,13 @@ nav {
     color: white;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 10%;
 }
 nav div
 {
-    gap: 200px;
+    gap: 90px;
 }
 
 nav a {
@@ -93,8 +95,12 @@ nav a:hover {
     background-color: #232526;
     color: #00c000;
 }
+
 .usuario
 {
+    
+    gap: 50px;
+    width: 25%;
     justify-content: flex-end;
 }
 .usuario p

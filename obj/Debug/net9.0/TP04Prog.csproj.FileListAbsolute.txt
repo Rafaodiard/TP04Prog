@@ -509,7 +509,7 @@ C:\Users\49758734\TP04Prog\obj\Debug\net9.0\TP04Prog.pdb
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\TP04Prog.genruntimeconfig.cache
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\ref\TP04Prog.dll
 C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-7kcpm257mu.gz
-C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-ovunuvsmdu.gz
-C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\2juh9ygk0w-qmjq89d65s.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\2juh9ygk0w-rwh6v02287.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-wg2az4actb.gz
+C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\2juh9ygk0w-rwh6v02287.gz
+C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-apc8henizw.gz
