@@ -12,7 +12,6 @@ async function AbrirSobre()
 
         contenedorFiguritas.innerHTML = "";
         sobre.style.display = "none";   
-        guardarBut.style.display = "block"
 
 
         figuritas.forEach((figurita, i) =>
@@ -32,6 +31,11 @@ async function AbrirSobre()
 
             }, i * 250);
         });
+        setTimeout(() =>
+        {
+            guardarBut.style.display = "block";
+        }, figuritas.length * 250);
+
     }
 }
 

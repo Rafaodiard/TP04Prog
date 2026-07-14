@@ -7,8 +7,8 @@ using TP04Prog.Models;
     public static class DB 
     { 
         private static string _connectionString =
-        //@"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
-        @"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+        @"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
+        //@"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
 
 
         

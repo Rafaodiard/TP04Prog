@@ -2,45 +2,58 @@
     List<Selecciones> selecciones = ViewBag.Selecciones;
 }
 
-<h1>Album FIFA 2026</h1>
+<div class="contenedor">
 
-<section>
+    <h1 class="titulo">Album FIFA 2026</h1>
+
     <div class="album">
 
-        <button id="anterior">◀</button>
+        <button class="boton btnalbum" id="anterior">◀</button>
 
         @for (int i = 0; i < selecciones.Count; i++)
         {
             <div class="seleccion @(i == 0 ? "activa" : "")">
 
-                <h2>@selecciones[i].Nombre</h2>
+                <h2 class="seleccion-titulo">@selecciones[i].Nombre</h2>
 
                 @foreach (Figuritas figurita in selecciones[i].Figuritas)
                 {
                     <div class="figurita">
+
                         @if(figurita.Pegada)
                         {
                             <img src="~/images/jugadores/@figurita.Jugador.Imagen" />
+                            <p>@figurita.Jugador.Nombre</p>
                         }
                         else
                         {
                             <img src="~/images/jugadores/def.svg"/>
+                            <p>@figurita.Jugador.Nombre</p>
                             @if(figurita.Cantidad > 0)
                             {
-                                <button data-imagen="@figurita.Jugador.Imagen" onclick="Pegar(@figurita.ID, this)">Pegar</button>
+                                
+                                <button
+                                    class="boton"
+                                    data-imagen="@figurita.Jugador.Imagen"
+                                    onclick="Pegar(@figurita.ID, this)">
+                                    Pegar
+                                </button>
                             }
                         }
-                        <p>@figurita.Jugador.Nombre</p>
+
+                        
+
                     </div>
                 }
 
             </div>
         }
 
-        <button id="siguiente">▶</button>
+        <button class="boton btnalbum" id="siguiente">▶</button>
 
     </div>
-</section>
+
+</div>
 
 @section Scripts {
     <script src="~/js/Album.js"></script>

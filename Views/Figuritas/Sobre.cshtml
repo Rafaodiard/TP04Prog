@@ -1,20 +1,29 @@
 @{
     ViewData["Title"] = "Abrir Sobre";
 }
+<div class="contenedor">
 
-<div id="sobre">
+    <h1 class="titulo">Abrir Sobre</h1>
 
-    <img src="/images/paquete.png" id="imagenSobre">
+    <div id="sobre">
 
-    <button onclick="AbrirSobre()">
-        Abrir sobre
+        <img src="/images/paquete.png" id="imagenSobre">
+
+        <br><br>
+
+        <button class="boton" onclick="AbrirSobre()">
+            Abrir sobre
+        </button>
+
+    </div>
+
+    <div id="figuritas"></div>
+
+    <button class="boton" id="guardar" onclick="GuardarFigus()">
+        Guardar figuritas
     </button>
 
 </div>
-
-<div id="figuritas">
-</div>
-<button id="guardar" onclick="GuardarFigus()"> guardar figuritas </button>
 
 
 @section Scripts {

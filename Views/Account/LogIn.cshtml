@@ -2,10 +2,10 @@
     ViewData["Title"] = "Iniciar sesión";
 }
 
-<h1>Iniciar sesión</h1>
 
-<form method="post" action='@Url.Action("Login","Account")'>
-
+<form method="post" action='@Url.Action("Login","Account")' class="formulario">
+    
+    <h1>Iniciar sesión</h1>
     <label>Usuario</label><br />
     <input type="text" name="usuario" required />
 
@@ -13,14 +13,13 @@
 
     <label>Contraseña</label><br />
     <input type="password" name="password" required />
-v
+
     <br /><br />
 
     <button type="submit">Ingresar</button>
     <p>@ViewBag.Error</p>
+    <p>¿No tienes una cuenta?   <a href='@Url.Action("Register","Account")'>Registrarse</a></p>
 
 </form>
 
-<br />
 
-<p>¿No tienes una cuenta?   <a href='@Url.Action("Register","Account")'>Registrarse</a></p>

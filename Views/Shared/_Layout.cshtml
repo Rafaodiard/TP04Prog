@@ -40,8 +40,10 @@
             </a>
             </div>
             <div class="usuario">
-                <p>@ViewBag.Cantidad/30</p> <br>
-                <p>FIGURITAS PEGADAS </p>
+                <div class="figspeg">
+                    <p class="cant">@ViewBag.Cantidad/30</p>
+                    <p>FIGURITAS PEGADAS </p>
+                </div>
 
                 <a href="@Url.Action("Profile","Account")">
                     <img src="~/Images/Usuario.png" alt="Imagen del usuario">
@@ -61,7 +63,34 @@
 
 <footer>
 
-    Álbum Digital Mundial FIFA 2026
+    <div class="footer-col">
+
+        <h3>Album FIFA 2026</h3>
+
+        <p>Coleccioná, intercambiá y completá tu álbum digital.</p>
+
+    </div>
+
+    <div class="footer-col">
+
+        <h3>Navegación</h3>
+
+        <a href="@Url.Action("Index", "Home")">Inicio</a>
+        <a href="@Url.Action("Index", "Album")">Álbum</a>
+        <a href="@Url.Action("MisFiguritas", "Figuritas")">Mis figuritas</a>
+        <a href="@Url.Action("Sobre", "Figuritas")">Abrir sobre</a>
+
+    </div>
+
+    <div class="footer-col">
+
+        <h3>Proyecto</h3>
+
+        <p>TP Programación 2026</p>
+
+        <p>ASP.NET MVC + SQL Server</p>
+
+    </div>
 
 </footer>
 

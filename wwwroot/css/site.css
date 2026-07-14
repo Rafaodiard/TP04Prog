@@ -6,7 +6,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.figspeg
+{
+    margin-top: 5%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.cant{
+    margin-top: 45%;
+}
 body {
     font-family: "Inter", sans-serif;
     min-height: 100vh;
@@ -85,7 +95,6 @@ nav a:hover {
 }
 .usuario
 {
-    gap: 20px;
     justify-content: flex-end;
 }
 .usuario p
@@ -313,6 +322,105 @@ body{
     display: none;
 }
 
+/*componentes*/
+
+.contenedor{
+    width:85%;
+    margin:3% auto;
+}
+
+.titulo{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:3%;
+}
+
+.boton{
+    background:#00b140;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:1% 3%;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.boton:hover{
+    background:#00c84a;
+}
+
+/*album*/
+
+.album{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.seleccion{
+    display:none;
+    width:85%;
+}
+
+.seleccion.activa{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:2%;
+}
+
+.figurita{
+    width:18%;
+    background:white;
+    color:#081c3a;
+    border-radius:12px;
+    padding:1%;
+    text-align:center;
+}
+.btnalbum
+{
+    margin-top: 15%;
+}
+.figurita img{
+    width:100%;
+}
+
+.figurita button{
+    width:100%;
+    margin-top:4%;
+}
+
+/*mis figuritas*/
+
+.figuritas-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:2%;
+    justify-content:center;
+}
+
+.seleccion-titulo{
+    width:100%;
+    margin:3% 0 1% 0;
+    font-size:30px;
+}
+
+/*sobre*/
+
+#sobre{
+    text-align:center;
+}
+
+#sobre img{
+    width:25%;
+}
+
+#guardar{
+    display:none;
+    margin:3% auto;
+}
 /*animacion figuritas(hecha con ia)*/
 
 #figuritas{
@@ -361,6 +469,84 @@ body{
 
 
 
+/*forms*/
+.formulario{
+    width:35%;
+    margin:5% auto;
+    padding:3%;
+    background:white;
+    border-radius:2%;
+    display:flex;
+    flex-direction:column;
+    gap:4%;
+}
+
+.formulario h1{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:8%;
+    color:  black;
+
+}
+
+.formulario label{
+    font-size:18px;
+    font-weight:bold;
+    margin-top:4%;
+    color:black;
+
+}
+
+.formulario input{
+    width:100%;
+    padding:3%;
+    margin-top:1%;
+    margin-bottom:4%;
+    border:1px solid #cfcfcf;
+    border-radius:8px;
+    font-size:18px;
+}
+
+.formulario input:focus{
+    border-color:#00b140;
+    outline:none;
+}
+
+.formulario button{
+    width:100%;
+    padding:3%;
+    margin-top:5%;
+    background:#00b140;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.formulario button:hover{
+    background:#00c84a;
+}
+
+.formulario a{
+    text-align:center;
+    margin-top:5%;
+    color:#00b140;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.formulario a:hover{
+    text-decoration:underline;
+}
+
+.formulario p{
+    text-align:center;
+    margin-top:4%;
+    color: black;
+}
 
 
 
@@ -369,4 +555,39 @@ body{
 
 
 
+/*footer*/
+footer{
+    background:#000;
+    color:white;
+    display:flex;
+    justify-content:space-around;
+    padding:2% 5%;
+    margin-top:5%;
+}
 
+.footer-col{
+    width:30%;
+}
+
+.footer-col h3{
+    color:#00c853;
+    font-size:22px;
+    margin-bottom:5%;
+}
+
+.footer-col p{
+    font-size:16px;
+    line-height:160%;
+}
+
+.footer-col a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:3%;
+    transition:.2s;
+}
+
+.footer-col a:hover{
+    color:#00c853;
+}

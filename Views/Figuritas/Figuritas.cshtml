@@ -4,29 +4,39 @@
     ViewData["Title"] = "Mis Figuritas";
 
 }
-<h1>Mis Figuritas:</h1>
+<div class="contenedor">
 
-@foreach(Figuritas f in figuritas)
-{
-    if(f.Jugador.idSeleccion != seleccionActual)
-    {
-        seleccionActual = f.Jugador.idSeleccion;
-        <h2>@f.Jugador.Seleccion.Nombre</h2>
-    }
-    <div>
-        <img src="~/images/jugadores/@f.Jugador.Imagen" />
-        <p>@f.Jugador.Nombre</p>
-        <p>Cantidad: @f.Cantidad</p>
+    <h1 class="titulo">Mis Figuritas</h1>
 
-        @if (f.Pegada)
+    <div class="figuritas-grid">
+
+        @foreach(Figuritas f in figuritas)
         {
-            <span>Pegada</span>
+            if(f.Jugador.idSeleccion != seleccionActual)
+            {
+                seleccionActual = f.Jugador.idSeleccion;
+
+                <h2 class="seleccion-titulo">
+                    @f.Jugador.Seleccion.Nombre
+                </h2>
+            }
+
+            <div class="figurita">
+
+                <img src="~/images/jugadores/@f.Jugador.Imagen"/>
+
+                <p>@f.Jugador.Nombre</p>
+
+                <p>Cantidad: @f.Cantidad</p>
+
+                <p>
+                    @(f.Pegada ? "Pegada" : "Sin pegar")
+                </p>
+
+            </div>
         }
-        else
-        {
-            <span>Sin pegar</span>
-        }
+
     </div>
-     
-}
+
+</div>
 
