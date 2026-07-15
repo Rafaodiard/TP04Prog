@@ -31,6 +31,7 @@ function mostrarSelecciones(indice)
 {
     selecciones[indiceActual].classList.remove("activa");    
     indiceActual = indice;
+    console.log(indice);
     selecciones[indiceActual].classList.add("activa");
 }
 
@@ -46,7 +47,7 @@ botonAdelante.addEventListener("click", function(e)
 botonAtras.addEventListener("click", function(e) 
     {
         let anterior = indiceActual - 1;
-        if(anterior <= 0)
+        if(anterior < 0)
         {   
             anterior = selecciones.length - 1;
         }

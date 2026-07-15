@@ -7,8 +7,8 @@ using TP04Prog.Models;
     public static class DB 
     { 
         private static string _connectionString =
-        //@"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
-        @"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
+        @"Server=localhost;Database=album2026;Integrated Security=True;TrustServerCertificate=True";
+        //@"Server=.\SQLEXPRESS;Database=album2026;Integrated Security=True;TrustServerCertificate=True;";
 
 
         
@@ -30,6 +30,19 @@ using TP04Prog.Models;
                     });
             }
         }
+        public static bool UsuarioExiste(string usuario)
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT COUNT(*)
+                                FROM Usuarios
+                                WHERE Usuario = @usuario";
+
+                int cantidad = connection.ExecuteScalar<int>(query, new { usuario });
+                return cantidad > 0;
+            }
+        }
+
         public static void Register(Usuarios u)
         {
             using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -164,7 +177,8 @@ using TP04Prog.Models;
             using(SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query = @"UPDATE UsuariosFiguritas
-                                SET Pegada = 1
+                                SET Pegada = 1,
+                                cantidad = cantidad -1
                                 WHERE idFigurita = @idFigurita
                                 AND idUsuario = @idUsuario";
 

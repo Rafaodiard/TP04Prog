@@ -73,14 +73,28 @@ if (IdUsuario != null)
         return View("LogIn");
     }
     [HttpPost]
-    public IActionResult Register(Usuarios u)
+    public IActionResult Register(Usuarios u, string password2)
     {
 int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
 if (IdUsuario != null)
 {
     ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        DB.Register(u);
+}        // Validar que las contraseñas coincidan
+        if (u.Password != password2)
+        {
+            ViewBag.Error = "las contraseñas no coinciden";
+            return View();
+        }
+
+        // Validar que el usuario no existe
+        if (DB.UsuarioExiste(u.Usuario))
+        {
+            ViewBag.Error = "usuario no disponible";
+            return View();
+        }
+
+        DB.Register(u);
 
         LogInViewModel login = new LogInViewModel();
         login.usuario = u.Usuario;
@@ -127,7 +141,7 @@ if (IdUsuario != null)
         DB.UpdateUsuario(usuario);
 
         ViewBag.Message = "Contraseña cambiada exitosamente.";
-        return View();
+        return View("Profile");
     }
 
 

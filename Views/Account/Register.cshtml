@@ -5,6 +5,15 @@
 <form method="post" action='@Url.Action("Register","Account")' id="formRegister" class="formulario">
     <h1>Registrarse</h1>
 
+    @if (ViewBag.Error != null)
+    {
+        <p id="errorMessage">@ViewBag.Error</p>
+    }
+    else
+    {
+        <p id="errorMessage"></p>
+    }
+
     <label>nombre</label><br />
     <input type="text" name="nombre" required />
     <label>Usuario</label><br />
@@ -22,9 +31,7 @@
     <button type="submit">Ingresar</button>
 
     <p>¿ya tienes una cuenta?  <a href="@Url.Action("index", "Account")">iniciar sesion</a></p>
-
 </form>
-<p id="errorMessage"> </p>
 
 
 

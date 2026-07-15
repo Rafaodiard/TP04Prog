@@ -60,7 +60,7 @@ async function cargarSobre()
 
         contenedorFiguritas.innerHTML = "";
         sobre.style.display = "none";   
-        guardarBut.style.display = "block"
+        
 
 
         figuritas.forEach((figurita, i) =>
@@ -79,6 +79,10 @@ async function cargarSobre()
                 contenedorFiguritas.appendChild(carta);
 
             }, i * 250);
+                    setTimeout(() =>
+        {
+            guardarBut.style.display = "block";
+        }, figuritas.length * 250);
         });
     }
 }

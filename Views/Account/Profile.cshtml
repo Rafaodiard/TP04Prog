@@ -1,7 +1,21 @@
+<div class="contenedor">
 
-<h1>nombre: @ViewBag.usuario.Nombre</h1>
-<h2>usuario: @ViewBag.usuario.Usuario</h2>
-<a href="@Url.Action("ChangePassword", "Account")">Cambiar contraseña</a>
-<a href="@Url.Action("Logout", "Account")">Cerrar sesión</a>
+    <div class="formulario">
 
+        <h1>Mi Perfil</h1>
 
+        <p><strong>Nombre:</strong> @ViewBag.usuario.Nombre</p>
+
+        <p><strong>Usuario:</strong> @ViewBag.usuario.Usuario</p>
+
+        <a class="boton" href="@Url.Action("ChangePassword", "Account")">
+            Cambiar contraseña
+        </a>
+
+        <a class="boton" href="@Url.Action("Logout", "Account")">
+            Cerrar sesión
+        </a>
+
+    </div>
+
+</div>
