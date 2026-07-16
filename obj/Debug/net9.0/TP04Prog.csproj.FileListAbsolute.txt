@@ -402,7 +402,6 @@ C:\Users\49758734\TP04Prog\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\scopedcss\bundle\TP04Prog.styles.css
-C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-qk02xfgh2y.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\b46qv3wneb-61n19gt1b8.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\865rwv3j4i-f0noe0pzt9.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\zvlu55z0ef-xthblr6lgs.gz
@@ -435,8 +434,6 @@ C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\00pr8v6gfy-4a0y6645xc.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\5znrxk0ta2-4edj96wesq.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\wyyc0qufuf-aadqzmnxhn.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\k9b8y4mvtw-m3x4wnyq1k.gz
-C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\wc1diyrhmk-jjfk9oxj3g.gz
-C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-7kcpm257mu.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\0z9ki0lgmd-xtxxf3hu2r.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\snkyn2wjhp-t1cqhe9u97.gz
 C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\eoq7tkz1gt-c2jlpeoesf.gz
@@ -513,3 +510,7 @@ C:\Proyectos\Proyectos\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-apc8heniz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-hztt7brnmy.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-qt7jw36ip6.gz
 C:\Users\49758734\Desktop\TP04Prog\obj\Debug\net9.0\compressed\2juh9ygk0w-pmwai6iey8.gz
+C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\66hwf7l0so-qt7jw36ip6.gz
+C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\wc1diyrhmk-3598jnyxvd.gz
+C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\737t9qcryv-hztt7brnmy.gz
+C:\Users\49758734\TP04Prog\obj\Debug\net9.0\compressed\2juh9ygk0w-pmwai6iey8.gz

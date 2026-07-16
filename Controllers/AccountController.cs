@@ -16,12 +16,12 @@ public class AccountController : Controller
     }
     public IActionResult Profile()
     {
-int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+    int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
-if (IdUsuario != null)
-{
-    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+    if (IdUsuario != null)
+    {
+        ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+    }        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
         
         if (usuarioId == null)
         {
@@ -33,22 +33,22 @@ if (IdUsuario != null)
     }
     public IActionResult ChangePassword()
     {
-int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+    int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
-if (IdUsuario != null)
-{
-    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        return View();
-    }
+    if (IdUsuario != null)
+    {
+        ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+    }        return View();
+        }
     
     public IActionResult Logout()
     {
-int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+    int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
-if (IdUsuario != null)
-{
-    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        HttpContext.Session.Clear();
+    if (IdUsuario != null)
+    {
+        ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+    }        HttpContext.Session.Clear();
         return RedirectToAction("Index", "Home");
     }
 
@@ -56,12 +56,12 @@ if (IdUsuario != null)
     [HttpPost]
     public IActionResult Login(LogInViewModel l)
     {
-int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+    int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
-if (IdUsuario != null)
-{
-    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        Usuarios u = DB.Login(l);
+    if (IdUsuario != null)
+    {
+        ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+    }        Usuarios u = DB.Login(l);
 
         if(u != null)
         {
@@ -75,49 +75,44 @@ if (IdUsuario != null)
     [HttpPost]
     public IActionResult Register(Usuarios u, string password2)
     {
-int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+        int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
-if (IdUsuario != null)
-{
-    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        // Validar que las contraseñas coincidan
-        if (u.Password != password2)
+        if (IdUsuario != null)
         {
-            ViewBag.Error = "las contraseñas no coinciden";
-            return View();
-        }
-
-        // Validar que el usuario no existe
+            ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+        }  
         if (DB.UsuarioExiste(u.Usuario))
         {
-            ViewBag.Error = "usuario no disponible";
+            ViewBag.Error = "Ese usuario ya existe.";
             return View();
         }
 
         DB.Register(u);
 
-        LogInViewModel login = new LogInViewModel();
-        login.usuario = u.Usuario;
-        login.password = u.Password;
+        LogInViewModel login = new LogInViewModel
+        {
+            usuario = u.Usuario,
+            password = u.Password
+        };
 
         Usuarios usuario = DB.Login(login);
 
         HttpContext.Session.SetInt32("UsuarioId", usuario.ID);
 
         return RedirectToAction("Index", "Album");
-
     }
 
     [HttpPost]
 
     public IActionResult ChangePassword(string currentPassword, string newPassword, string confirmPassword)
     {
-int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
+        int? IdUsuario = HttpContext.Session.GetInt32("UsuarioId");
 
-if (IdUsuario != null)
-{
-    ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
-}        int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+        if (IdUsuario != null)
+        {
+            ViewBag.Cantidad = DB.GetCantidadPegadas(IdUsuario.Value);
+        }  
+      int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
         Usuarios usuario = DB.GetUsuarioById(usuarioId.Value);
 
         if (usuario == null)
@@ -143,7 +138,13 @@ if (IdUsuario != null)
         ViewBag.Message = "Contraseña cambiada exitosamente.";
         return View("Profile");
     }
-
+    [HttpPost]
+    public IActionResult CheckUser([FromBody] Dictionary<string, string> datos)
+    {
+        return Json(DB.UsuarioExiste(datos["NombreUsuario"]));
+    }
 
     
 }
+
+
